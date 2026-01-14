@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todotask-complete
+  namespace: argocd
+spec:
+  project: default
+  source:
+    # Arahkan ke Repo ke-3 (Khusus YAML)
+    repoURL: https://github.com/karadaval/todotask-k8s.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: todotask-complete
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
