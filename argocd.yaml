@@ -8,7 +8,7 @@ spec:
   source:
     # Arahkan ke Repo ke-3 (Khusus YAML)
     repoURL: https://github.com/karadaval/todotask-k8s.git
-    targetRevision: HEAD
+    targetRevision: main
     path: dev
   destination:
     server: https://kubernetes.default.svc
